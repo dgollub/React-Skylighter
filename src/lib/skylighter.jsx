@@ -109,8 +109,9 @@ var SkyLight = React.createClass({
 
         if (this.props.showOverlay) {
             overlay = (<div className={overlayClasses}
-                onClick={this.handleOverlayClick}
-                onKeyDown={this.handleKeyDown} 
+                onClick={this.hide}
+                onKeyDown={this.handleKeyDown}
+                onTouchEnd={this.handleTouch} 
                 ></div>);
         }
 
@@ -119,7 +120,7 @@ var SkyLight = React.createClass({
                 {overlay}
                 <div className={dialogClasses}
                      onKeyDown={this.handleKeyDown}>
-                    <a className="skylighter-dialog--close" role="button" onClick={this.hide}>&times;</a>
+                    <a className="skylighter-dialog--close" role="button" onTouchEnd={this.handleTouch} onClick={this.hide}>&times;</a>
                     <h2>{this.props.title}</h2>
                     {this.props.children}
                 </div>
@@ -127,6 +128,11 @@ var SkyLight = React.createClass({
         )
     },
     
+    handleTouch: function(ev) {
+        ev.preventDefault();
+        this.hide();
+    },
+
     handleKeyDown: function(ev) {
         var event = event || window.event,
             keyCode = event.which || event.keyCode;  // IE sucks
@@ -139,10 +145,6 @@ var SkyLight = React.createClass({
             this.hide();
         } break;
         }
-    },
-    
-    handleOverlayClick: function(ev) {
-        this.hide();
     },
 
 });

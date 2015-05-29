@@ -28,6 +28,8 @@
 
 .skylighter-wrapper {
 
+    position: relative;
+
     .skylighter-dialog {
         width: 50%;
         height: 400px;
@@ -77,4 +79,42 @@
         display: none!important;
     }
 }
+
+// mobile styles: iPhone 2G-4S in portrait & landscape
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+    .skylighter-wrapper {
+
+        display: table;
+
+        .skylighter-dialog {
+            
+display: table-cell;
+width: 75%;
+height: 300px;
+top: 0;
+left: 0;
+margin-left: 10%;
+margin-right:auto;
+margin-top: 10%;
+            
+            border-radius: 2px;
+            
+            padding: 5px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .2);            
+        }
+
+        .skylighter-dialog--close {
+        }
+
+        .skylighter-dialog__overlay {            
+
+        }
+
+    }
+} // END mobile styles: iPhone 2G-4S in portrait & landscape
+
+
 
