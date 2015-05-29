@@ -79,5 +79,6 @@ A callback functions to execute before and after open and before and after close
 
 
 ## Release History
-
+ 
+ * 2015-05-29   v0.1.1   improvements for mobile devices, bugfixes
  * 2015-05-29   v0.1.0   initial release based on [React-SkyLight](https://github.com/marcio/react-skylight)
