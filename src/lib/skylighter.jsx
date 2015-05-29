@@ -134,7 +134,7 @@ var SkyLight = React.createClass({
     },
 
     handleKeyDown: function(ev) {
-        var event = event || window.event,
+        var event = ev || window.event,
             keyCode = event.which || event.keyCode;  // IE sucks
         
         if (!this.state.isVisible) return;
