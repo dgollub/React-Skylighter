@@ -1,0 +1,68 @@
+{
+  "name": "react-skylighter",
+  "version": "0.1.0",
+  "description": "A react component for modals and dialogs.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dgollub/react-skylighter.git"
+  },
+  "bugs": "https://github.com/dgollub/react-skylighter/issues",
+  "keywords": [
+    "React",
+    "Modal",
+    "Dialog",
+    "react-component"
+  ],
+  "tags": [
+    "react",
+    "modal",
+    "dialog"
+  ],
+  "author": "Daniel Kurashige-Gollub <daniel@kurashige-gollub.de>",
+  "contributors": [
+    "Marcio Gasparotto"
+  ],
+  "license": "MIT",
+  "browserify": {
+    "extensions": [
+      ".jsx",
+      ".js"
+    ],
+    "transform": [
+      [
+        "reactify"
+      ]
+    ]
+  },
+  "peerDependencies": {
+    "react": ">=0.12.0 <1.0.0"
+  },
+  "dependencies": {
+    "browserify": "^8.0.3",
+    "classnames": "^2.1.2",
+    "es5-shim": "^4.1.3",
+    "html5shiv": "^3.7.2",
+    "lie": "^2.9.1",
+    "minifyify": "^7.0.0",
+    "react": "*",
+    "react-tools": "*",
+    "reactify": "^0.17.1",
+    "sass": "^0.5.0",
+    "watch": "^0.16.0"
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist && mkdir -p dist/css dist/js",
+    "build:app:min": "browserify -d src/app/app.jsx -p [minifyify --compressPath . --map app.js.map --output dist/js/app.js.map ] > dist/js/app.min.js && cp dist/js/app.* examples/js/",
+    "build:app:normal": "browserify -d src/app/app.jsx > dist/js/app.js && cp dist/js/app.js examples/js/",
+    "build:app": "npm run build:app:normal && npm run build:app:min",
+    "build:js:normal": "browserify -d src/lib/skylighter.jsx > dist/js/skylighter.js",
+    "build:js:min": "browserify -d src/lib/skylighter.jsx -p [minifyify --compressPath . --map skylighter.js.map --output dist/js/skylighter.js.map ] > dist/js/skylighter.min.js",
+    "build:js": "npm run build:js:normal && npm run build:js:min",
+    "build:sass": "sass --sourcemap=inline src/sass/_styles.scss:dist/css/skylighter.css && cp dist/css/skylighter.css examples/css/",
+    "build": "npm run build:js && npm run build:app && npm run build:sass",
+    "dist": "npm run clean && npm run build",
+    "watch": "watch 'npm run build' src/",
+    "run": "npm run dist && ./build-and-show.sh"
+  }
+}
