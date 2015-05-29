@@ -5,9 +5,9 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:dgollub/react-skylighter.git"
+    "url": "git@github.com:dgollub/React-Skylighter.git"
   },
-  "bugs": "https://github.com/dgollub/react-skylighter/issues",
+  "bugs": "https://github.com/dgollub/React-Skylighter/issues",
   "keywords": [
     "React",
     "Modal",

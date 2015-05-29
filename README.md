@@ -12,6 +12,12 @@ It is based on Marcio Gasparotto's wonderful simple [React-SkyLight](https://git
 - added examples (based on [Initializer](http://www.initializr.com/))
 - defaults to show the overlay
 
+
+Disclaimer
+------------
+I will likely not support this software as I am busy with a lot of other things at the moment. It was mainly an exercise in using React and optimizing my npm and overall web development workflow.
+
+
 Installation
 ------------
 
