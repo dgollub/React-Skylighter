@@ -65,11 +65,11 @@ Show modal with an overlay (true) or without an overlay (false). Default is *tru
 ####beforeOpen, afterOpen, beforeClose and afterClose: (Function)
 A callback functions to execute before and after open and before and after close a modal. You can use just the one you want.
 ``` html
-<SkyLight ref="myModal" title="TITLE FOR MODAL"
+<SkyLighter ref="myModal" title="TITLE FOR MODAL"
             beforeOpen={myFunctionToExecuteBeforeOpen}
             afterOpen={myFunctionToExecuteAfterOpen}
             beforeClose={myFunctionToExecuteBeforeClose}
-            afterClose={myFunctionToExecuteAfterClose}>Modal Content</SkyLight>
+            afterClose={myFunctionToExecuteAfterClose}>Modal Content</SkyLighter>
 ```
 
 
